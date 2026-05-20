@@ -22,7 +22,7 @@ void setup() {
 
   radarRadius = width * 0.44;
 
-  myPort = new Serial(this, "COM6", 9600);
+  myPort = new Serial(this, "COM5", 9600);
   myPort.bufferUntil('.');
 }
 

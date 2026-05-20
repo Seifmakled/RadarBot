@@ -1,0 +1,8 @@
+# Local database — regenerated when running logger.py
+radar_logs.db
+radar_logs.db-journal
+*.db-journal
+
+# Python cache
+__pycache__/
+*.pyc

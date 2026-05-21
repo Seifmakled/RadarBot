@@ -22,7 +22,7 @@ void setup() {
 
   radarRadius = width * 0.44;
 
-  myPort = new Serial(this, "COM5", 9600);
+  myPort = new Serial(this, "COM7", 9600);
   myPort.bufferUntil('.');
 }
 
@@ -42,9 +42,19 @@ void draw() {
 void serialEvent(Serial myPort) {
 
   data = myPort.readStringUntil('.');
-  data = data.substring(0, data.length() - 1);
+  if (data == null) return;
+
+  data = data.substring(0, data.length() - 1);   // drop trailing '.'
+
+  // The Arduino also prints a 4-field logger line (angle,distance,mode,buzzer)
+  // that has no '.', so it gets buffered in front of the next reading.
+  // Keep only the text after the last newline -> the clean "angle,distance".
+  int nl = data.lastIndexOf('\n');
+  if (nl != -1) data = data.substring(nl + 1);
+  data = data.trim();
 
   index1 = data.indexOf(',');
+  if (index1 == -1) return;
 
   angle = data.substring(0, index1);
   distance = data.substring(index1 + 1);

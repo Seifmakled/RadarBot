@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 
 # -------- SERIAL SETUP --------
-PORT = "COM5"
+PORT = "COM7"
 BAUD = 9600
 LOG_INTERVAL = 1.0  # seconds between each saved reading
 

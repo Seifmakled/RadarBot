@@ -136,7 +136,7 @@ void drawText() {
   }
 
   textSize(40);
-  text("Ibrahim, Yasmine", width * 0.05, height - height * 0.0277);
+  text("Seif & Antoni", width * 0.05, height - height * 0.0277);
   text("Angle: " + iAngle + "°", width * 0.45, height - height * 0.0277);
 
   if (iDistance != -1) {

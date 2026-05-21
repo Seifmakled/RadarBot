@@ -3,7 +3,8 @@ radar_logs.db
 radar_logs.db-journal
 *.db-journal
 
-# Report generator script (doc already included, script not needed)
+# Report files — PDF is on GitHub, Word doc stays local only
+RadarBot Report.docx
 build_report.py
 
 # Python cache

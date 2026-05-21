@@ -39,7 +39,7 @@ from flask import Flask, Response, jsonify, render_template, request
 # ----------------------------------------------------------------------------
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-PORT = os.environ.get("RADAR_PORT", "COM7")
+PORT = os.environ.get("RADAR_PORT", "COM5")
 BAUD = int(os.environ.get("RADAR_BAUD", "9600"))
 DB_PATH = os.environ.get("RADAR_DB", os.path.normpath(os.path.join(HERE, "..", "radar_logs.db")))
 FORCE_SIM = os.environ.get("RADAR_SIM", "0") == "1"
